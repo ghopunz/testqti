@@ -32,10 +32,10 @@ UserRepository.prototype = {
     });
   },
 
-  delete: function(code, cb, errCb){
+  delete: function(id, cb, errCb){
     let db = this.db;
     let query = 'DELETE FROM user WHERE code = ?';
-    db.query(query, [code], (err, results) => {
+    db.query(query, [id], (err, results) => {
       if(err){
         errCb(err);
       }

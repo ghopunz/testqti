@@ -32,6 +32,8 @@ app.post('/save_user', userController.saveUser);
 app.get('/update_user/:id', userController.updateUserShowForm);
 app.post('/update_user', userController.updateUser);
 
+app.get('/delete_user/:id', userController.deleteUser);
+
 // app.use('/', index);
 // app.use('/users', users);
 

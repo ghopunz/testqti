@@ -76,11 +76,11 @@ let deleteUser = (req, res, next) =>{
         next('username tidak ada');
     }
 
-    let username = req.params.username;
+    let id = req.params.id;
     let userRepo = UserRepo(db);
 
-    userRepo.delete(user, result => {
-
+    userRepo.delete(id, result => {
+        res.redirect('/');
     }, err => {
         if(err){
             next(err);
