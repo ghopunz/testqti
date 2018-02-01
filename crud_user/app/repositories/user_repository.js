@@ -34,7 +34,7 @@ UserRepository.prototype = {
 
   delete: function(id, cb, errCb){
     let db = this.db;
-    let query = 'DELETE FROM user WHERE code = ?';
+    let query = 'DELETE FROM user WHERE id = ?';
     db.query(query, [id], (err, results) => {
       if(err){
         errCb(err);
