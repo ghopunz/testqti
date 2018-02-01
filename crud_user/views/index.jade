@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  div
+    table(border = '1')
+      thead
+        th USERNAME
+        th FULLNAME
+        th CITY
+        th STATUS
+        th ACTION
+      
+      tbody
+        each u in users
+          tr
+            td #{u.id}
+            td #{u.username}
+            td #{u.fullname}
+            td #{u.city}
+            td #{u.status}
+            td #[a(href='/user_detail/' + u.id) Detail] | #[a(href='/edit_user/' + u.id) Edit] | #[a(href='/delete_user/' + u.id) Delete]
+
+
+
