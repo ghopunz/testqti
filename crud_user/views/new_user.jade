@@ -2,4 +2,26 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  div
+    form(method='post' action='/save_user')
+
+      p : Id
+      input(type='number' name='id')
+
+      p : Username
+      input(type='text' name='username')
+
+      p : Password
+      input(type='password' name='password')
+
+      p : Fullname
+      input(type='text' name='fullname')
+
+      p : City
+      input(type='text' name='city')
+
+      p : Status
+      input(type='text' name='status')
+
+      button(type='submit') Save

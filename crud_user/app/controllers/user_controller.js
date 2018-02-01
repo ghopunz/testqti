@@ -6,7 +6,7 @@ let User = require('../domains/user');
 
 // SAVE
 let saveUserShowForm = (req, res, next) => {
-    res.render('new_user', {'tittle': 'Add New User'})
+    res.render('new_user', {'title': 'Add New User'})
 };
 
 let saveUser = (req, res, next) =>{
@@ -36,10 +36,10 @@ let updateUserShowForm = (req, res, next) => {
         next('username tidak ada');
     }
 
-    let username = req.params.username;
+    let id = req.params.id;
     let userRepo = new UserRepo(db);
 
-    userRepo.findOne(username, result => {
+    userRepo.findOne(id, result => {
         res.render('update_user', {'user' :result, 'title':'Update User'});
     }, err => {
 

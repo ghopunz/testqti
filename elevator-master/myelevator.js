@@ -77,6 +77,6 @@ Elevator.prototype.decide = function() {
         }
     }
 
-    // return this.commit_decision(elevator.get_people());
-    return this.commit_decision(Math.floor(num_floors / 2));
+    return this.commit_decision(elevator.get_people());
+    // return this.commit_decision(Math.floor(num_floors / 2));
 };

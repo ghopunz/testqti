@@ -25,6 +25,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', userController.getAllUser);
+
+app.get('/new_user', userController.saveUserShowForm);
+app.post('/save_user', userController.saveUser);
+
+app.get('/update_user/:id', userController.updateUserShowForm);
+app.post('/update_user', userController.updateUser);
+
 // app.use('/', index);
 // app.use('/users', users);
 
